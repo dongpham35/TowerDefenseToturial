@@ -6,6 +6,11 @@ public class EnemyController : MonoBehaviour
 {
 
     public float speed = 15f;
+    public int Health = 100;
+    public int value = 50;
+    public GameObject enemyDieEffectPrefab;
+
+    private static int currentHealth;
 
     private Transform target;
     private int currentWaypointIndex = 0;
@@ -13,6 +18,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         target = Waypoints.waypoints[currentWaypointIndex];
+        currentHealth = Health;
     }
 
     public void Update()
@@ -28,10 +34,33 @@ public class EnemyController : MonoBehaviour
     {
         if (currentWaypointIndex >= Waypoints.waypoints.Length - 1)
         {
-            Destroy(gameObject);
+            Damage();
             return;
         }
         currentWaypointIndex++;
         target = Waypoints.waypoints[currentWaypointIndex];
+    }
+
+    private void Damage()
+    {
+        PlayerStats.lives -= 1;
+        Destroy(gameObject);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth = Mathf.Clamp(currentHealth -= damage, 0 , Health);
+        if(currentHealth == 0)
+        {
+            Die();
+        }
+    }
+
+    public void Die()
+    {
+        PlayerStats.money += value;
+        GameObject dieeffect = Instantiate(enemyDieEffectPrefab, transform.position, Quaternion.identity);
+        Destroy(dieeffect, 5f);
+        Destroy(gameObject);
     }
 }

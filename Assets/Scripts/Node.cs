@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color NotEnounghMoney;
 
     private Color baseColor;
     private Renderer rend;
@@ -40,6 +41,12 @@ public class Node : MonoBehaviour
             return;
         if (!BuildManager.Instance.CanBuild)
             return;
+
+        if (!BuildManager.Instance.EnounghMoney)
+        {
+            rend.material.color = NotEnounghMoney;
+            return;
+        }
         rend.material.color = hoverColor;
     }
 

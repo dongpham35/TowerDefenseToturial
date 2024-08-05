@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardturretPrefab;
     public TurretBlueprint missilelauncherPrefab;
+    public TurretBlueprint laserBeamerPrefab;
 
     public void SetTurretToStandTurret()
     {
@@ -15,5 +16,10 @@ public class Shop : MonoBehaviour
     public void SetTurretToMissileLauncher()
     {
         BuildManager.Instance.SetTurretToBuild(missilelauncherPrefab);
+    }
+
+    public void SetTurretToLaserBeamer()
+    {
+        BuildManager.Instance.SetTurretToBuild(laserBeamerPrefab);
     }
 }

@@ -98,6 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  Health: 100
+  value: 50
+  enemyDieEffectPrefab: {fileID: 3980614507707117691, guid: 26e51f3f745145e4d9592924808ecd87, type: 3}
 --- !u!65 &-2208221869479382428
 BoxCollider:
   m_ObjectHideFlags: 0

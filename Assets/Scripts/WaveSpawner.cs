@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GameMaster : MonoBehaviour
+public class WaveSpawner : MonoBehaviour
 {
     public Text txtTimerToNextWayenemy;
     public float TimeToNextWayenemy;
@@ -23,7 +23,8 @@ public class GameMaster : MonoBehaviour
         }
 
         timerWayEnemy -= Time.deltaTime;
-        txtTimerToNextWayenemy.text = Mathf.Floor(timerWayEnemy).ToString();
+        timerWayEnemy = Mathf.Clamp(timerWayEnemy, 0 , Mathf.Infinity);
+        txtTimerToNextWayenemy.text = string.Format("{0:00.00}", timerWayEnemy);
     }
 
     IEnumerator SpawnEnemyWay()
