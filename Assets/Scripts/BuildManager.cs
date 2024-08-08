@@ -6,7 +6,10 @@ using UnityEngine;
 public class BuildManager : MonoBehaviour
 {
     public GameObject buildEffectPrefab;
+    public GameObject sellEffectPrefab;
+    public NodeUI nodeUI;
 
+    private Node selectedNode;
     //Singleton
     private static BuildManager instance;
     public static BuildManager Instance { get => instance; }
@@ -25,30 +28,37 @@ public class BuildManager : MonoBehaviour
     public void SetTurretToBuild(TurretBlueprint turret)
     {
         TurretToBuild = turret;
+        DeselectedNode();
     }
 
-    public void BuildTurretOn(Node node)
+    
+    
+    public void SelectedNode(Node node)
     {
-        if(PlayerStats.money < TurretToBuild.cost)
+        if (selectedNode == node)
         {
-            Debug.Log("Not enough money to build that");
+            DeselectedNode();
             return;
         }
+        selectedNode = node;
+        TurretToBuild = null;
 
-        PlayerStats.money -= TurretToBuild.cost;
-
-        GameObject turret = Instantiate(TurretToBuild.TurretPrefab, node.GetBuildPosition(), Quaternion.identity);
-        node.turret = turret;
-
-        GameObject buildeffect = Instantiate(buildEffectPrefab, node.GetBuildPosition(), Quaternion.identity);
-        Destroy(buildeffect, 5f);
-
-        Debug.Log("Turret build!");
+        nodeUI.SetTarget(node);
     }
-    
 
     private void Start()
     {
         TurretToBuild = null;
+    }
+
+    public void DeselectedNode()
+    {
+        nodeUI.Hide();
+        selectedNode = null;
+    }
+
+    public TurretBlueprint getTurretToBuild()
+    {
+        return TurretToBuild;
     }
 }

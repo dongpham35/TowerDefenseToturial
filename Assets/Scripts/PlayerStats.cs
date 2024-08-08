@@ -5,10 +5,12 @@ using UnityEngine;
 public class PlayerStats : MonoBehaviour
 {
     public static int money;
-    public int startMoney = 300;
+    public int startMoney = 400;
 
     public static int lives;
     public int startLives = 20;
+
+    public static int round = 0;
 
     private void Start()
     {

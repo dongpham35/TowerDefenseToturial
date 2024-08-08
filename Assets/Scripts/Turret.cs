@@ -5,6 +5,7 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     private Transform target;
+    private Enemy targetEnemy;
 
     [Header("General")]
     public float range = 15f;
@@ -15,8 +16,12 @@ public class Turret : MonoBehaviour
 
 
     [Header("Use laser")]
+    public float damagePct = 30f;
     public bool userlaser = false;
     public LineRenderer linerenderer;
+    public float slow = .5f;
+    public ParticleSystem laserBeamerImpactEffectPrefab;
+    public Light lightImpact;
 
     [Header("Unity setup fields")]
     public string nameTag = "Enemy";
@@ -50,6 +55,7 @@ public class Turret : MonoBehaviour
         if (nearestEnemy != null && minDistance <= range)
         {
             target = nearestEnemy.transform;
+            targetEnemy = target.GetComponent<Enemy>();
         }
         else
         {
@@ -66,6 +72,8 @@ public class Turret : MonoBehaviour
                 if (linerenderer.enabled)
                 {
                     linerenderer.enabled = false;
+                    laserBeamerImpactEffectPrefab.Stop();
+                    lightImpact.enabled = false;
                 }
             }
             return;
@@ -92,16 +100,28 @@ public class Turret : MonoBehaviour
 
     private void LockOnTarget()
     {
-        Vector3 dir = target.position - transform.position;
+        Vector3 dir = target.position - PartToRotate.position;
         Quaternion lookRotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(PartToRotate.rotation, lookRotation, Time.deltaTime * turnSpeed).eulerAngles;
         PartToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
     }
     private void Laser()
     {
-        linerenderer.enabled = true;
+        targetEnemy.TakeDamage(damagePct * Time.deltaTime);
+        targetEnemy.Slow(slow);
+        if (!linerenderer.enabled)
+        {
+            linerenderer.enabled = true;
+            laserBeamerImpactEffectPrefab.Play();
+            lightImpact.enabled = true;
+        }
+        
         linerenderer.SetPosition(0, firePoint.position);
         linerenderer.SetPosition(1, target.position);
+        Vector3 dir = firePoint.position - target.position;
+        laserBeamerImpactEffectPrefab.transform.position = target.position + dir.normalized;
+        laserBeamerImpactEffectPrefab.transform.rotation = Quaternion.LookRotation(dir);
+        
     }
     private void OnDrawGizmosSelected()
     {
