@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public GameObject gameoverUI;
+    public GameObject completeLevelUI;
 
     public static bool gameover;
 
@@ -30,5 +31,11 @@ public class GameManager : MonoBehaviour
     {
         gameover = true;
         gameoverUI.SetActive(true);
+    }
+
+    public void WinLevel()
+    {
+        gameover = true;
+        completeLevelUI.SetActive(true);
     }
 }

@@ -37,7 +37,7 @@ public class Enemy : MonoBehaviour
         GameObject dieeffect = Instantiate(enemyDieEffectPrefab, transform.position, Quaternion.identity);
         Destroy(dieeffect, 5f);
         Destroy(gameObject);
-        WaveSpawner.lives--;
+        WaveSpawner.Enemyslive--;
     }
 
     public void Slow(float pct)

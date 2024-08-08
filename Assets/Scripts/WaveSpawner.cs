@@ -5,7 +5,9 @@ using UnityEngine.UI;
 
 public class WaveSpawner : MonoBehaviour
 {
-    public static int lives = 0;
+    public GameManager gameManager;
+
+    public static int Enemyslive = 0;
 
     public Wave[] waves;
 
@@ -19,11 +21,17 @@ public class WaveSpawner : MonoBehaviour
 
     private void Update()
     {
-        if(lives > 0)
+        if (Enemyslive > 0)
         {
             return;
         }
-        if(timerWayEnemy <= 0)
+        if (waveIndex == waves.Length)
+        {
+            this.enabled = false;
+            gameManager.WinLevel();
+        }
+
+        if (timerWayEnemy <= 0)
         {
             StartCoroutine(SpawnEnemyWay());
             timerWayEnemy = TimeToNextWayenemy;
@@ -31,26 +39,27 @@ public class WaveSpawner : MonoBehaviour
         }
 
         timerWayEnemy -= Time.deltaTime;
-        timerWayEnemy = Mathf.Clamp(timerWayEnemy, 0 , Mathf.Infinity);
+        timerWayEnemy = Mathf.Clamp(timerWayEnemy, 0, Mathf.Infinity);
         txtTimerToNextWayenemy.text = string.Format("{0:00.00}", timerWayEnemy);
     }
 
     IEnumerator SpawnEnemyWay()
     {
         Wave wave = waves[waveIndex];
-        PlayerStats.round = waveIndex;
+        PlayerStats.round ++;
+        Enemyslive = wave.count;
         for (int i = 0; i < wave.count; i++)
         {
             SpawnEnemy(wave.enemy);
-            yield return new WaitForSeconds(1f/ wave.rate);
+            yield return new WaitForSeconds(1f / wave.rate);
         }
+
         waveIndex++;
     }
 
     private void SpawnEnemy(GameObject _enemy)
     {
         Instantiate(_enemy, SpawnEnemyPoint.position, _enemy.transform.rotation);
-        lives++;
     }
 
 }
