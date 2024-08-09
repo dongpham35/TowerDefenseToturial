@@ -13,6 +13,7 @@ public class Enemy : MonoBehaviour
     public int value = 50;
     public GameObject enemyDieEffectPrefab;
 
+    private bool isDie = false;
     private float Health;
 
     private void Start()
@@ -23,9 +24,11 @@ public class Enemy : MonoBehaviour
 
     public void TakeDamage(float amount)
     {
-        Health = Mathf.Clamp(Health -= amount, 0 , Health);
+        if (isDie)
+            return;
+        Health -= amount;
         healthbar.fillAmount = Health / StartHealth;
-        if(Health == 0)
+        if(Health <= 0)
         {
             Die();
         }
@@ -33,11 +36,12 @@ public class Enemy : MonoBehaviour
 
     public void Die()
     {
+        isDie = true;
         PlayerStats.money += value;
         GameObject dieeffect = Instantiate(enemyDieEffectPrefab, transform.position, Quaternion.identity);
-        Destroy(dieeffect, 5f);
+        WaveSpawner.Enemyslive -=1;
+        Destroy(dieeffect, 2f);
         Destroy(gameObject);
-        WaveSpawner.Enemyslive--;
     }
 
     public void Slow(float pct)

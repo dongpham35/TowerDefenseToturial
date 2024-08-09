@@ -280,8 +280,8 @@ MonoBehaviour:
   StartSpeed: 20
   healthbar: {fileID: 996440829115775706}
   speed: 10
-  StartHealth: 35
-  value: 15
+  StartHealth: 50
+  value: 10
   enemyDieEffectPrefab: {fileID: 3980614507707117691, guid: 2ac90e1d85d40a34c998e00bb4db14d5, type: 3}
 --- !u!65 &-2208221869479382428
 BoxCollider:
