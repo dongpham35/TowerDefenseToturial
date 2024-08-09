@@ -78,7 +78,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 20
-  fireRate: 0.5
+  fireRate: 0.7
+  damagePct: 30
+  userlaser: 0
+  linerenderer: {fileID: 0}
+  slow: 0.5
+  laserBeamerImpactEffectPrefab: {fileID: 0}
+  lightImpact: {fileID: 0}
   nameTag: Enemy
   PartToRotate: {fileID: 8053692408422763731}
   turnSpeed: 10

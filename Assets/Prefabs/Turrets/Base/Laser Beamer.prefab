@@ -10037,10 +10037,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1193b7b642443f8409c896576f330872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 15
+  range: 20
   fireRate: 1
+  damagePct: 25
   userlaser: 1
   linerenderer: {fileID: 7806727476257430772}
+  slow: 0.5
   laserBeamerImpactEffectPrefab: {fileID: 8550975965959197330}
   lightImpact: {fileID: 2096585094202249367}
   nameTag: Enemy

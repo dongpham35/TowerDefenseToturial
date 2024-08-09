@@ -3496,17 +3496,17 @@ MonoBehaviour:
     TurretPrefab: {fileID: 6250546370277719896, guid: 1f164b7b74c36e4499e4e54c3ac68215, type: 3}
     cost: 100
     TurretUpgradePrefab: {fileID: 6250546370277719896, guid: c195f0b9b2c8f4441851d646437076a4, type: 3}
-    costUpgrade: 150
+    costUpgrade: 200
   missilelauncherPrefab:
     TurretPrefab: {fileID: 2645916644526268421, guid: 03cd1f9953ec11248b7cd764b5b37b77, type: 3}
-    cost: 250
+    cost: 150
     TurretUpgradePrefab: {fileID: 2645916644526268421, guid: 4f8f846738bec78439b5bb896bde826a, type: 3}
-    costUpgrade: 350
+    costUpgrade: 250
   laserBeamerPrefab:
     TurretPrefab: {fileID: 7723466264821306072, guid: a4d9ae3e1ddb75549a327f3e87cfe401, type: 3}
-    cost: 350
+    cost: 200
     TurretUpgradePrefab: {fileID: 7723466264821306072, guid: 5c3a0b6a20964db458bc10c2381f1a14, type: 3}
-    costUpgrade: 500
+    costUpgrade: 300
 --- !u!1001 &363648349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15807,6 +15807,9 @@ MonoBehaviour:
   - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
     count: 2
     rate: 2
+  - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
+    count: 5
+    rate: 3
   - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
     count: 10
     rate: 3

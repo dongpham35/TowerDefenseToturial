@@ -15566,13 +15566,28 @@ MonoBehaviour:
   waypoint: {fileID: 189706710}
   waves:
   - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
-    count: 2
-    rate: 1
-  - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
     count: 5
-    rate: 2
+    rate: 5
+  - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
+    count: 10
+    rate: 5
+  - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
+    count: 10
+    rate: 5
   - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
     count: 15
+    rate: 5
+  - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
+    count: 20
+    rate: 5
+  - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
+    count: 25
+    rate: 10
+  - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
+    count: 5
+    rate: 3
+  - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
+    count: 10
     rate: 3
   txtTimerToNextWayenemy: {fileID: 574180492}
   TimeToNextWayenemy: 2
@@ -15591,7 +15606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2409743edf48e52479744defde143f0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startMoney: 300
+  startMoney: 450
   startLives: 20
 --- !u!114 &1542133458
 MonoBehaviour:

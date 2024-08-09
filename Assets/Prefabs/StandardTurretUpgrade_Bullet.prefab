@@ -99,4 +99,4 @@ MonoBehaviour:
   SpeedBullet: 70
   bulletEffectPrefab: {fileID: 7031517233782507736, guid: f5c71322e85837748bb98e600792ac70, type: 3}
   explossionRadius: 0
-  dame: 60
+  dame: 35

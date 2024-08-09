@@ -10037,7 +10037,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1193b7b642443f8409c896576f330872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 23
+  range: 25
   fireRate: 1
   damagePct: 35
   userlaser: 1
