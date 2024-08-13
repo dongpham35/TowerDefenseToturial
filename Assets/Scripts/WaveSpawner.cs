@@ -17,8 +17,8 @@ public class WaveSpawner : MonoBehaviour
     public float TimeToNextWayenemy;
 
     public Transform[] SpawnEnemyPoint;
-
-    private float timerWayEnemy = 0;
+    [Header("Time to start first way")]
+    public float timerWayEnemy;
     private int waveIndex = 0;
 
 
@@ -30,6 +30,11 @@ public class WaveSpawner : MonoBehaviour
     }
     private void Update()
     {
+        if(PlayerStats.lives <= 0)
+        {
+            this.enabled = false;
+            return;
+        }
         if (Enemyslive > 0)
         {
             return;

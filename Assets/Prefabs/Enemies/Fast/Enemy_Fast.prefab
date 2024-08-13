@@ -277,10 +277,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ba792c2b8f5c44a930cd62b8db29ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartSpeed: 20
+  StartSpeed: 15
   healthbar: {fileID: 996440829115775706}
   speed: 10
-  StartHealth: 50
+  StartHealth: 40
   value: 10
   enemyDieEffectPrefab: {fileID: 3980614507707117691, guid: 2ac90e1d85d40a34c998e00bb4db14d5, type: 3}
 --- !u!65 &-2208221869479382428

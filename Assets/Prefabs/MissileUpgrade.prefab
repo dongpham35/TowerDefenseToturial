@@ -131,4 +131,4 @@ MonoBehaviour:
   SpeedBullet: 45
   bulletEffectPrefab: {fileID: 416803761456280867, guid: 927a6022635564d4fa505516c8445e2d, type: 3}
   explossionRadius: 3.5
-  dame: 35
+  dame: 40

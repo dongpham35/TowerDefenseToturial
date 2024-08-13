@@ -3336,14 +3336,17 @@ MonoBehaviour:
     costUpgrade: 150
   missilelauncherPrefab:
     TurretPrefab: {fileID: 2645916644526268421, guid: 03cd1f9953ec11248b7cd764b5b37b77, type: 3}
-    cost: 250
+    cost: 150
     TurretUpgradePrefab: {fileID: 2645916644526268421, guid: 4f8f846738bec78439b5bb896bde826a, type: 3}
-    costUpgrade: 350
+    costUpgrade: 250
   laserBeamerPrefab:
     TurretPrefab: {fileID: 7723466264821306072, guid: a4d9ae3e1ddb75549a327f3e87cfe401, type: 3}
-    cost: 350
+    cost: 200
     TurretUpgradePrefab: {fileID: 7723466264821306072, guid: 5c3a0b6a20964db458bc10c2381f1a14, type: 3}
-    costUpgrade: 500
+    costUpgrade: 300
+  txtCostStadardTurret: {fileID: 1593175522708418012}
+  txtCostmissileLauncher: {fileID: 1549286686}
+  txtCostLaserBeamerTurret: {fileID: 1793932755}
 --- !u!1001 &363648349
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6135,7 +6138,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4.25
+  m_Text: 00.00
 --- !u!222 &574180493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15567,33 +15570,34 @@ MonoBehaviour:
   waves:
   - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
     count: 5
-    rate: 5
+    rate: 2
   - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
     count: 10
-    rate: 5
+    rate: 2
   - enemy: {fileID: 4484914070650895735, guid: af1230cfdf60f6e498c139ef739ba970, type: 3}
     count: 10
     rate: 5
   - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
     count: 15
-    rate: 5
+    rate: 3
   - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
     count: 20
     rate: 5
   - enemy: {fileID: 4484914070650895735, guid: 79905699dd56c4e4898e043a29ea509d, type: 3}
     count: 25
-    rate: 10
+    rate: 5
   - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
     count: 5
-    rate: 3
+    rate: 1
   - enemy: {fileID: 4484914070650895735, guid: f1e7388a02dd7cc4881a069693a23a77, type: 3}
     count: 10
-    rate: 3
+    rate: 5
   txtTimerToNextWayenemy: {fileID: 574180492}
   TimeToNextWayenemy: 2
   SpawnEnemyPoint:
   - {fileID: 268460575}
   - {fileID: 1667354465}
+  timerWayEnemy: 4
 --- !u!114 &1542133457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15979,6 +15983,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+--- !u!114 &1549286686 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1605770505723403, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+  m_PrefabInstance: {fileID: 1549286685}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1560700542
 GameObject:
   m_ObjectHideFlags: 0
@@ -17928,6 +17943,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+--- !u!114 &1793932755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1605770505723403, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+  m_PrefabInstance: {fileID: 1793932754}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1794113445
 GameObject:
   m_ObjectHideFlags: 0
@@ -21134,6 +21160,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+--- !u!114 &1593175522708418012 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1605770505723403, guid: 58aa6915619c10d4582edb1f19daedab, type: 3}
+  m_PrefabInstance: {fileID: 1593175522708418011}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &4587670270221302163
 PrefabInstance:
   m_ObjectHideFlags: 0

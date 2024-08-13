@@ -39,7 +39,7 @@ public class Enemy : MonoBehaviour
         isDie = true;
         PlayerStats.money += value;
         GameObject dieeffect = Instantiate(enemyDieEffectPrefab, transform.position, Quaternion.identity);
-        WaveSpawner.Enemyslive -=1;
+        WaveSpawner.Enemyslive --;
         Destroy(dieeffect, 2f);
         Destroy(gameObject);
     }
